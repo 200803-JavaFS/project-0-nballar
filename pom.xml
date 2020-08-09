@@ -9,6 +9,27 @@
   <properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+  </properties>
+  
+  <dependencies>
+  		<dependency>
+  			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13</version>
+			<scope>test</scope>
+  		</dependency>
+  		
+  		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.13.3</version>
+  		</dependency>
+  		
+  		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.13.3</version>
+  		</dependency>
+  </dependencies>
   
 </project>
