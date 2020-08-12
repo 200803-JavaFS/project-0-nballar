@@ -7,6 +7,10 @@ public class Account {
 	private String accountType;
 	private double accountBalance;
 	
+	public Account() {
+		super();
+	}
+	
 	public int getUserId() {
 		return userId;
 	}
