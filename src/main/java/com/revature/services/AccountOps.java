@@ -32,6 +32,8 @@ public class AccountOps {
 			b.setAccountBalance(b.getAccountBalance()+amt);
 			System.out.println("Transfer successful. New balance for first account is :"+balance);
 			System.out.println("New balance for second account is :"+b.getAccountBalance());
+		} else {
+			System.out.println("Transaction can't be processed.");
 		}
 	}
 }

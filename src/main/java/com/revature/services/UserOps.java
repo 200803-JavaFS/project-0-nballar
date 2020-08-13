@@ -1,28 +1,32 @@
 package com.revature.services;
 
-public class UserOps {
+import com.revature.models.Account;
+import com.revature.models.User;
 
-	public void logIn() {
-		
-	}
+public class UserOps {
 	
-	public void logOut() {
-		
-	}
-	
-	public void createAccount() {
-		
-	}
-	
-	public void cancelAccount() {
-		
-	}
+	User u = new User();
+	Account a = new Account();
+	String type = u.getUserType();
 	
 	public void approveAccount() {
 		
+		if (type == "Employee" | type == "Admin") {
+			a.setIsApproved("Approved!");
+			System.out.println("The account number "+a.getAccountId()+" has been approved.");
+		} else {
+			System.out.println("You do not have the ability to perform this function.");
+		}
 	}
 	
 	public void denyAccount() {
+		
+		if (type == "Employee" | type == "Admin") {
+			a.setIsApproved("Denied!");
+			System.out.println("The account number "+a.getAccountId()+" has been denied.");
+		} else {
+			System.out.println("You do not have the ability to perform this function.");
+		}
 		
 	}
 	

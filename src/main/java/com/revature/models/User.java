@@ -1,32 +1,66 @@
 package com.revature.models;
 
 public class User {
-
 	
-	
-	private String username;
-	private String password;
+	private int userId;
+	private String userName;
+	private String passWord;
 	private String userType;
 	private String firstName;
 	private String lastName;
-	private int birthdate;
+	private int birthDate;
 	private String email;
 	private int phoneNumber;
 	
-	public String getUsername() {
-		return username;
+	public User() {
+		super();
+		userId = 0;
+		userName = null;
+		passWord = null;
+		userType = null;
+		firstName = null;
+		lastName = null;
+		birthDate = 0;
+		email = null;
+		phoneNumber = 0;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public User(int userId, String username, String password, String userType, String firstName, String lastName, int birthdate,
+			String email, int phoneNumber) {
+		super();
+		this.userId = userId;
+		this.userName = username;
+		this.passWord = password;
+		this.userType = userType;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthDate = birthdate;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
 	}
 	
-	public String getPassword() {
-		return password;
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
-	public void setPassword(String password) {
-		this.password = password;
+	public String getUserName() {
+		return userName;
+	}
+	
+	public void setUserName(String username) {
+		this.userName = username;
+	}
+	
+	public String getPassWord() {
+		return passWord;
+	}
+	
+	public void setPassWord(String password) {
+		this.passWord = password;
 	}
 
 	public String getUserType() {
@@ -53,12 +87,12 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public int getBirthdate() {
-		return birthdate;
+	public int getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirthdate(int birthdate) {
-		this.birthdate = birthdate;
+	public void setBirthDate(int birthdate) {
+		this.birthDate = birthdate;
 	}
 
 	public String getEmail() {
@@ -76,6 +110,14 @@ public class User {
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", passWord=" + passWord + ", userType=" + userType
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + ", email="
+				+ email + ", phoneNumber=" + phoneNumber + "]";
+	}
+	
 	
 	
 }

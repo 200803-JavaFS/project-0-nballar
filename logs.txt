@@ -1,0 +1,2 @@
+2020-08-11 23:01:03 INFO  Driver:12 - The Bank application is starting.
+2020-08-12 19:09:12 INFO  Driver:12 - The Bank application is starting.
