@@ -12,7 +12,7 @@ public class UserOps {
 	public void approveAccount() {
 		
 		if (type == "Employee" | type == "Admin") {
-			a.setIsApproved("Approved!");
+			a.setStatus("Approved!");
 			System.out.println("The account number "+a.getAccountId()+" has been approved.");
 		} else {
 			System.out.println("You do not have the ability to perform this function.");
@@ -22,7 +22,7 @@ public class UserOps {
 	public void denyAccount() {
 		
 		if (type == "Employee" | type == "Admin") {
-			a.setIsApproved("Denied!");
+			a.setStatus("Denied!");
 			System.out.println("The account number "+a.getAccountId()+" has been denied.");
 		} else {
 			System.out.println("You do not have the ability to perform this function.");

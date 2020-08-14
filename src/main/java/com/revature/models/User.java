@@ -10,23 +10,13 @@ public class User {
 	private String lastName;
 	private int birthDate;
 	private String email;
-	private int phoneNumber;
 	
 	public User() {
 		super();
-		userId = 0;
-		userName = null;
-		passWord = null;
-		userType = null;
-		firstName = null;
-		lastName = null;
-		birthDate = 0;
-		email = null;
-		phoneNumber = 0;
 	}
 	
 	public User(int userId, String username, String password, String userType, String firstName, String lastName, int birthdate,
-			String email, int phoneNumber) {
+			String email) {
 		super();
 		this.userId = userId;
 		this.userName = username;
@@ -36,9 +26,20 @@ public class User {
 		this.lastName = lastName;
 		this.birthDate = birthdate;
 		this.email = email;
-		this.phoneNumber = phoneNumber;
 	}
 	
+	public User(String userName, String passWord, String userType, String firstName, String lastName, int birthDate,
+			String email) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+		this.userType = userType;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthDate = birthDate;
+		this.email = email;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -103,21 +104,72 @@ public class User {
 		this.email = email;
 	}
 
-	public int getPhoneNumber() {
-		return phoneNumber;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + birthDate;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((passWord == null) ? 0 : passWord.hashCode());
+		result = prime * result + userId;
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((userType == null) ? 0 : userType.hashCode());
+		return result;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (birthDate != other.birthDate)
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (passWord == null) {
+			if (other.passWord != null)
+				return false;
+		} else if (!passWord.equals(other.passWord))
+			return false;
+		if (userId != other.userId)
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		if (userType == null) {
+			if (other.userType != null)
+				return false;
+		} else if (!userType.equals(other.userType))
+			return false;
+		return true;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", passWord=" + passWord + ", userType=" + userType
 				+ ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + ", email="
-				+ email + ", phoneNumber=" + phoneNumber + "]";
+				+ email +"]";
 	}
-	
-	
 	
 }
