@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.models.User;
+import com.revature.utils.ConnectionUtility;
 
 public class UserDAO implements IUserDAO {
 	

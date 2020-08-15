@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.revature.models.Account;
 import com.revature.models.User;
+import com.revature.utils.ConnectionUtility;
 
 public class AccountDAO implements IAccountDAO{
 
@@ -19,7 +20,7 @@ public class AccountDAO implements IAccountDAO{
 	public List<Account> getAllAccounts() {
 		
 		try(Connection con = ConnectionUtility.getConnection()){
-			String sql = "SELECT * FROM homes;";
+			String sql = "SELECT * FROM accounts;";
 			
 			Statement stmt = con.createStatement();
 			
@@ -53,7 +54,36 @@ public class AccountDAO implements IAccountDAO{
 
 	@Override
 	public List<Account> getAllAccountsByUserId(User userId) {
-		// TODO Auto-generated method stub
+		try (Connection con = ConnectionUtility.getConnection()) {
+			String sql = "SELECT * FROM accounts WHERE user_id_fk = "+userId+";";
+			
+			Statement stmt = con.createStatement();
+			
+			List<Account> list = new ArrayList<>();
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				Account a = new Account();
+				a.setAccountId(rs.getInt("account_id"));
+				a.setAccountType(rs.getString("account_type"));
+				a.setAccountBalance(rs.getDouble("account_balance"));
+				a.setStatus(rs.getString("status"));
+				
+				if (rs.getString("user_id_fk") != null) {
+					a.setUserId(uDao.getUserById(rs.getInt("user_id_fk")));
+				}
+				
+				list.add(a);
+				
+			}
+			
+			return list;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
@@ -118,14 +148,46 @@ public class AccountDAO implements IAccountDAO{
 
 	@Override
 	public boolean updateAccountStatus(Account a) {
-		// TODO Auto-generated method stub
+		try (Connection con = ConnectionUtility.getConnection()) {
+			String sql = "UPDATE accounts SET status = ? WHERE account_id = ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			int i = 0;
+			stmt.setString(++i, a.getStatus());
+			stmt.setInt(++i, a.getAccountId());
+			
+			stmt.execute();
+			return true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return false;
+		
 	}
 
 	@Override
 	public boolean updateAccountBalance(Account a) {
-		// TODO Auto-generated method stub
+		try (Connection con = ConnectionUtility.getConnection()) {
+			String sql = "UPDATE accounts SET balance = ? WHERE account_id = ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			int i = 0;
+			stmt.setDouble(++i, a.getAccountBalance());
+			stmt.setInt(++i, a.getAccountId());
+			
+			stmt.execute();
+			return true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return false;
+		
 	}
 	
 	

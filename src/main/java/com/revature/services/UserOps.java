@@ -1,33 +1,36 @@
 package com.revature.services;
 
-import com.revature.models.Account;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.models.User;
+import com.revature.repositories.IUserDAO;
+import com.revature.repositories.UserDAO;
 
 public class UserOps {
 	
-	User u = new User();
-	Account a = new Account();
-	String type = u.getUserType();
+	private static IUserDAO uDao = new UserDAO();
+	private static final Logger log = LogManager.getLogger(UserOps.class);
 	
-	public void approveAccount() {
-		
-		if (type == "Employee" | type == "Admin") {
-			a.setStatus("Approved!");
-			System.out.println("The account number "+a.getAccountId()+" has been approved.");
-		} else {
-			System.out.println("You do not have the ability to perform this function.");
-		}
+	public List<User> getAllUsers() {
+		log.info("Getting all Users");
+		List<User> list = uDao.getAllUsers();
+		return list;
 	}
 	
-	public void denyAccount() {
-		
-		if (type == "Employee" | type == "Admin") {
-			a.setStatus("Denied!");
-			System.out.println("The account number "+a.getAccountId()+" has been denied.");
-		} else {
-			System.out.println("You do not have the ability to perform this function.");
+	public User getUserById(int id) {
+		log.info("Getting a User with id: "+id);
+		return uDao.getUserById(id);
+	}
+	
+	public boolean createNewUser(User u) {
+		log.info("Creating a new User: "+u);
+		if (uDao.addUser(u)) {
+			return true;
 		}
-		
+		return false;
 	}
 	
 }
