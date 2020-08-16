@@ -49,9 +49,42 @@ public class UserDAO implements IUserDAO {
 	}
 
 	@Override
+	public List<User> getAllUsersByType(String userType) {
+		try(Connection con = ConnectionUtility.getConnection()) {
+			String sql = "SELECT * FROM users WHERE user_type = "+userType+";";
+			
+			Statement stmt = con.createStatement();
+			
+			List<User> list = new ArrayList<>();
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				User u = new User();
+				u.setUserId(rs.getInt("user_id"));
+				u.setUserName(rs.getString("user_name"));
+				u.setPassWord(rs.getString("pass_word"));
+				u.setUserType(rs.getString("user_type"));
+				u.setFirstName(rs.getString("first_name"));
+				u.setLastName(rs.getString("last_name"));
+				u.setBirthDate(rs.getInt("birth_date"));
+				u.setEmail(rs.getString("email"));
+				list.add(u);
+			}
+			
+			return list;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	@Override
 	public User getUserById(int userId) {
 		try(Connection con = ConnectionUtility.getConnection()){
-			String sql = "SELECT * FROM users WHERE user_id = ?;";
+			String sql = "SELECT * FROM users WHERE user_id = "+userId+";";
 			
 			Statement stmt = con.createStatement();
 			
@@ -106,5 +139,7 @@ public class UserDAO implements IUserDAO {
 		
 		return false;
 	}
+
+	
 	
 }

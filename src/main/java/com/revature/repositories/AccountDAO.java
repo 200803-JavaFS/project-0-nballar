@@ -55,7 +55,7 @@ public class AccountDAO implements IAccountDAO{
 	@Override
 	public List<Account> getAllAccountsByUserId(User userId) {
 		try (Connection con = ConnectionUtility.getConnection()) {
-			String sql = "SELECT * FROM accounts WHERE user_id_fk = "+userId+";";
+			String sql = "SELECT * FROM accounts WHERE user_id_fk = "+userId.getUserId()+";";
 			
 			Statement stmt = con.createStatement();
 			
@@ -171,7 +171,7 @@ public class AccountDAO implements IAccountDAO{
 	@Override
 	public boolean updateAccountBalance(Account a) {
 		try (Connection con = ConnectionUtility.getConnection()) {
-			String sql = "UPDATE accounts SET balance = ? WHERE account_id = ?;";
+			String sql = "UPDATE accounts SET account_balance = ? WHERE account_id = ?;";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			

@@ -1,2 +1,50 @@
 2020-08-11 23:01:03 INFO  Driver:12 - The Bank application is starting.
 2020-08-12 19:09:12 INFO  Driver:12 - The Bank application is starting.
+2020-08-15 16:57:56 INFO  UserOps:24 - Getting a User with id: 4
+2020-08-15 17:06:42 INFO  UserOps:24 - Getting a User with id: 4
+2020-08-15 17:07:42 INFO  UserOps:24 - Getting a User with id: 4
+2020-08-15 17:37:17 INFO  UserOps:24 - Getting a User with id: 4
+2020-08-15 17:38:00 INFO  UserOps:24 - Getting a User with id: 1
+2020-08-15 17:39:55 INFO  UserOps:24 - Getting a User with id: 4
+2020-08-15 20:57:45 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 20:58:21 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 20:58:21 INFO  AccountOps:28 - Getting Accounts by User's ID: User [userId=1, userName=the_eddie, passWord=edlovescat, userType=Customer, firstName=Edward, lastName=Ballar, birthDate=131, email=rawwpork@gmail.com]
+2020-08-15 21:03:46 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:04:12 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:04:12 INFO  AccountOps:28 - Getting Accounts by User's ID: 1
+2020-08-15 21:10:48 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:11:16 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:11:16 INFO  AccountOps:28 - Getting Accounts by User's ID: 1
+2020-08-15 21:13:20 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:13:36 INFO  AccountOps:84 - Depositing 500.0 from Account with ID 2
+2020-08-15 21:15:58 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:16:03 INFO  AccountOps:84 - Depositing 500.0 from Account with ID 2
+2020-08-15 21:18:34 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:19:24 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:19:33 INFO  AccountOps:84 - Depositing 50.0 from Account with ID 2
+2020-08-15 21:20:11 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:25:44 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:26:11 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:40:02 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 21:40:35 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:40:46 INFO  AccountOps:99 - Withdrawing 50.0 from Account with ID 2
+2020-08-15 21:44:23 INFO  AccountOps:34 - Getting Account by ID: 1
+2020-08-15 21:44:25 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:47:03 INFO  AccountOps:113 - Transferring 500.0 from Account with ID 1 to Account with Id 2
+2020-08-15 21:47:03 INFO  AccountOps:99 - Withdrawing 500.0 from Account with ID 1
+2020-08-15 21:47:03 INFO  AccountOps:84 - Depositing 500.0 from Account with ID 2
+2020-08-15 21:49:58 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 21:50:01 INFO  AccountOps:34 - Getting Account by ID: 1
+2020-08-15 21:50:06 INFO  AccountOps:113 - Transferring 500.0 from Account with ID 2 to Account with Id 1
+2020-08-15 21:50:07 INFO  AccountOps:99 - Withdrawing 500.0 from Account with ID 2
+2020-08-15 21:50:07 INFO  AccountOps:84 - Depositing 500.0 from Account with ID 1
+2020-08-15 22:28:11 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 22:28:42 INFO  AccountOps:34 - Getting Account by ID: 1
+2020-08-15 22:28:46 INFO  AccountOps:34 - Getting Account by ID: 2
+2020-08-15 22:28:52 INFO  AccountOps:114 - Transferring 500.0 from Account with ID 1 to Account with Id 2
+2020-08-15 22:28:53 INFO  AccountOps:99 - Withdrawing 500.0 from Account with ID 1
+2020-08-15 22:28:53 INFO  AccountOps:84 - Depositing 500.0 from Account with ID 2
+2020-08-15 23:15:49 INFO  UserOps:35 - Creating a new User: User [userId=0, userName=decepticon4life, passWord=soundwavelove, userType=Employee, firstName=Vy, lastName=Nguyen, birthDate=909, email=decepticon4life@gmail.com]
+2020-08-15 23:19:06 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 23:19:55 INFO  UserOps:30 - Getting a User with id: 1
+2020-08-15 23:20:59 INFO  AccountOps:49 - Creating a new Account: Account [accountId=0, userId=1, accountType=Test, accountBalance=6900.0, status=Pending]

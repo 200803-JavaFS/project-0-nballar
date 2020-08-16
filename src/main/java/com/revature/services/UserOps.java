@@ -20,6 +20,12 @@ public class UserOps {
 		return list;
 	}
 	
+	public List<User> getAllUsersByType(String type) {
+		log.info("Getting all Users by type "+type);
+		List<User> list = uDao.getAllUsersByType(type);
+		return list;
+	}
+	
 	public User getUserById(int id) {
 		log.info("Getting a User with id: "+id);
 		return uDao.getUserById(id);
@@ -32,5 +38,5 @@ public class UserOps {
 		}
 		return false;
 	}
-	
+		
 }

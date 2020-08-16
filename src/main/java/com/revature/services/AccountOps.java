@@ -25,7 +25,7 @@ public class AccountOps {
 	}
 	
 	public List<Account> getAccountsByUserId(User userId) {
-		log.info("Getting Accounts by User's ID: "+userId);
+		log.info("Getting Accounts by User's ID: "+userId.getUserId());
 		List<Account> list = aDao.getAllAccountsByUserId(userId);
 		return list;
 	}
@@ -76,39 +76,72 @@ public class AccountOps {
 		return false;
 	}
 	
-	public double deposit(Account a, double amt) {
+	public double deposit(int aId, double amt) {
+		Account a = aDao.getAccountById(aId);
 		if (amt <= 0) {
 			log.info("You can not deposit a negative amount or nothing.");
 		} else {
-			log.info("Depositing "+amt+" into Account "+a);
+			log.info("Depositing "+amt+" from Account with ID "+aId);
 			double newBalance = a.getAccountBalance() + amt;
 			a.setAccountBalance(newBalance);
+			aDao.updateAccountBalance(a);
 		}
 		return a.getAccountBalance();
 	}
 	
-	public double withdraw(Account a, double amt) {
+	public double withdraw(int aId, double amt) {
+		Account a = aDao.getAccountById(aId);
 		if (amt <= 0) {
 			log.info("You can not withdraw a negative amount or nothing.");
 		} else if (amt > a.getAccountBalance()) {
 			log.info("You can not overdraw from your account.");
 		} else {
-			log.info("Withdrawing "+amt+" from Account "+a);
+			log.info("Withdrawing "+amt+" from Account with ID "+aId);
 			double newBalance = a.getAccountBalance() - amt;
 			a.setAccountBalance(newBalance);
+			aDao.updateAccountBalance(a);
 		}
 		return a.getAccountBalance();
 	}
 	
-	public void transferTo(Account a, Account b, double amt) {
+	public double[] transferTo(int aId, int bId, double amt) {
+		Account a = aDao.getAccountById(aId);
+		Account b = aDao.getAccountById(bId);
+		double[] newBalances = new double[2];
 		if (amt > a.getAccountBalance()) {
 			log.info("You do not have enough funds to complete this transfer.");
 		} else {
-			log.info("Transferring "+amt+" from Account "+a+" to Account "+b);
-			double newBalanceA = withdraw(a, amt);
+			log.info("Transferring "+amt+" from Account with ID "+aId+" to Account with Id "+bId);
+			double newBalanceA = withdraw(aId, amt);
 			a.setAccountBalance(newBalanceA);
-			double newBalanceB = deposit(b, amt);
+			aDao.updateAccountBalance(a);
+			newBalances[0] = a.getAccountBalance();
+			double newBalanceB = deposit(bId, amt);
 			b.setAccountBalance(newBalanceB);
+			aDao.updateAccountBalance(b);
+			newBalances[1] = b.getAccountBalance();
 		}
+		return newBalances;
+	}
+	
+	public String approveAccount(int aId) {
+		Account a = aDao.getAccountById(aId);
+		a.setStatus("Approved");
+		aDao.updateAccountStatus(a);
+		return a.getStatus();
+	}
+	
+	public String denyAccount(int aId) {
+		Account a = aDao.getAccountById(aId);
+		a.setStatus("Denied");
+		aDao.updateAccountStatus(a);
+		return a.getStatus();
+	}
+	
+	public String closeAccount(int aId) {
+		Account a = aDao.getAccountById(aId);
+		a.setStatus("Closed");
+		aDao.updateAccountStatus(a);
+		return a.getStatus();
 	}
 }
