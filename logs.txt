@@ -48,3 +48,14 @@
 2020-08-15 23:19:06 INFO  UserOps:30 - Getting a User with id: 1
 2020-08-15 23:19:55 INFO  UserOps:30 - Getting a User with id: 1
 2020-08-15 23:20:59 INFO  AccountOps:49 - Creating a new Account: Account [accountId=0, userId=1, accountType=Test, accountBalance=6900.0, status=Pending]
+2020-08-16 10:52:34 INFO  UserOps:30 - Getting a User with id: 3
+2020-08-16 10:52:56 INFO  UserOps:24 - Getting all Users by type Customer
+2020-08-16 11:02:44 INFO  UserOps:30 - Getting a User with id: 3
+2020-08-16 11:03:06 INFO  UserOps:24 - Getting all Customers
+2020-08-16 11:03:06 INFO  AccountOps:22 - Getting all Accounts
+2020-08-16 11:07:07 INFO  AccountOps:133 - Approving Account with id 5
+2020-08-16 11:07:37 INFO  AccountOps:146 - Denying Account with id 5
+2020-08-16 11:08:02 INFO  AccountOps:133 - Approving Account with id 5
+2020-08-16 12:09:33 INFO  UserOps:30 - Getting a User with id: 4
+2020-08-16 17:18:00 INFO  UserOps:30 - Getting a User with id: 4
+2020-08-16 17:19:45 INFO  AccountOps:159 - Closing account with id 5

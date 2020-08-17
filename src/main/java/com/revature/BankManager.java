@@ -96,8 +96,69 @@ public class BankManager {
 	}
 
 	private void adminMenu() {
-		// TODO Auto-generated method stub
+		System.out.println("What would you like to do?\n"+"[a] View Your Customers' Information\n"+"[b] Deposit\n"+"[c] Withdraw\n"+"[d] Transfer\n"
+				+"[e] Approve Account\n"+"[f] Deny Account\n"+"[g] Close Account\n"+"[h] Exit");
+		String adAns = scan.nextLine();
+		adAns = adAns.toLowerCase();
 		
+		switch(adAns) {
+			case "a":
+				getAllCustInfo();
+				getAllAcc();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "b":
+				depositIntoAcc();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "c":
+				withdrawFromAcc();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "d":
+				transferMoneyFromAcc1ToAcc2();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "e":
+				approveAcc();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "f":
+				denyAcc();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "g":
+				closeAcc();
+				System.out.println("Would you like to do anything else?");
+				adminMenu();
+				break;
+			case "h":
+				System.out.println("Thanks for ballin' with Little Baller Bank! Have a great day!");
+				break;
+			default:
+				System.out.println("You have entered an incorrect value. Please try again.");
+				adminMenu();
+				break;
+		}
+		
+	}
+
+	private void closeAcc() {
+		System.out.println("To ensure you can perform this type of action, please enter your user id.");
+		int i1 = scan.nextInt();
+		scan.nextLine();
+		System.out.println("What is the id of the account you'd like to deny?");
+		int i2 = scan.nextInt();
+		scan.nextLine();
+		String stats = ao.closeAccount(i1, i2);
+		
+		System.out.println("The status of the account with id "+i2+" is now "+stats+".");
 	}
 
 	private void employeeMenu() {
@@ -135,21 +196,27 @@ public class BankManager {
 	}
 
 	private void denyAcc() {
-		System.out.println("What is the id of the account you'd like to deny?");
-		int i = scan.nextInt();
+		System.out.println("To ensure you can perform this type of action, please enter your user id.");
+		int i1 = scan.nextInt();
 		scan.nextLine();
-		String stats = ao.denyAccount(i);
+		System.out.println("What is the id of the account you'd like to deny?");
+		int i2 = scan.nextInt();
+		scan.nextLine();
+		String stats = ao.denyAccount(i1, i2);
 		
-		System.out.println("The status of the account with id "+i+" is now "+stats+".");
+		System.out.println("The status of the account with id "+i2+" is now "+stats+".");
 	}
 
 	private void approveAcc() {
-		System.out.println("What is the id of the account you'd like to approve?");
-		int i = scan.nextInt();
+		System.out.println("To ensure you can perform this type of action, please enter your user id.");
+		int i1 = scan.nextInt();
 		scan.nextLine();
-		String stats = ao.approveAccount(i);
+		System.out.println("What is the id of the account you'd like to approve?");
+		int i2 = scan.nextInt();
+		scan.nextLine();
+		String stats = ao.approveAccount(i1, i2);
 		
-		System.out.println("The status of the account with id "+i+" is now "+stats+".");
+		System.out.println("The status of the account with id "+i2+" is now "+stats+".");
 	}
 
 	private void getAllAcc() {
@@ -161,7 +228,7 @@ public class BankManager {
 	}
 
 	private void getAllCustInfo() {
-		List<User> customers = uo.getAllUsersByType("Customer");
+		List<User> customers = uo.getAllCustomers();
 		System.out.println("Here are all the Customers in the database:");
 		for (User u: customers) {
 			System.out.println(u);

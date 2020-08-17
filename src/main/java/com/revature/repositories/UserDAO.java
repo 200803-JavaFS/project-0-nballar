@@ -49,9 +49,9 @@ public class UserDAO implements IUserDAO {
 	}
 
 	@Override
-	public List<User> getAllUsersByType(String userType) {
+	public List<User> getAllCustomers() {
 		try(Connection con = ConnectionUtility.getConnection()) {
-			String sql = "SELECT * FROM users WHERE user_type = "+userType+";";
+			String sql = "SELECT * FROM users WHERE user_type = 'Customer';";
 			
 			Statement stmt = con.createStatement();
 			

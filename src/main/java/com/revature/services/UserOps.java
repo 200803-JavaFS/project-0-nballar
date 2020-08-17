@@ -20,9 +20,9 @@ public class UserOps {
 		return list;
 	}
 	
-	public List<User> getAllUsersByType(String type) {
-		log.info("Getting all Users by type "+type);
-		List<User> list = uDao.getAllUsersByType(type);
+	public List<User> getAllCustomers() {
+		log.info("Getting all Customers");
+		List<User> list = uDao.getAllCustomers();
 		return list;
 	}
 	

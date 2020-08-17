@@ -124,24 +124,44 @@ public class AccountOps {
 		return newBalances;
 	}
 	
-	public String approveAccount(int aId) {
+	public String approveAccount(int uId, int aId) {
+		User u = uDao.getUserById(uId);
 		Account a = aDao.getAccountById(aId);
-		a.setStatus("Approved");
-		aDao.updateAccountStatus(a);
+		if (u.getUserType() == "Customer") {
+			log.info("You are not allowed to perform this type of action.");
+		} else {
+			log.info("Approving Account with id "+aId);
+			a.setStatus("Approved");
+			aDao.updateAccountStatus(a);
+		}
 		return a.getStatus();
 	}
 	
-	public String denyAccount(int aId) {
+	public String denyAccount(int uId, int aId) {
+		User u = uDao.getUserById(uId);
 		Account a = aDao.getAccountById(aId);
-		a.setStatus("Denied");
-		aDao.updateAccountStatus(a);
+		if (u.getUserType() == "Customer") {
+			log.info("You are not allowed to perform this type of action.");
+		} else {
+			log.info("Denying Account with id "+aId);
+			a.setStatus("Denied");
+			aDao.updateAccountStatus(a);
+		}
 		return a.getStatus();
 	}
 	
-	public String closeAccount(int aId) {
+	public String closeAccount(int uId, int aId) {
+		User u = uDao.getUserById(uId);
 		Account a = aDao.getAccountById(aId);
-		a.setStatus("Closed");
-		aDao.updateAccountStatus(a);
+		if (u.getUserType() == "Customer" || u.getUserType() == "Employee") {
+			log.info("You are not allowed to perform this type of action.");
+		} else {
+			log.info("Closing account with id "+aId);
+			a.setAccountBalance(0.00);
+			aDao.updateAccountBalance(a);
+			a.setStatus("Closed");
+			aDao.updateAccountStatus(a);
+		}
 		return a.getStatus();
 	}
 }
