@@ -1,5 +1,6 @@
 package com.revature;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,7 +28,12 @@ public class BankManager {
 		
 		switch(ans1) {
 			case "a":
-				logIn();
+				try {
+					logIn();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					bankManagement();
+				}
 				System.out.println("What is your user type?\n"+"[a] Customer\n"+"[b] Employee\n"+"[c] Admin");
 				String ans2 = scan.nextLine();
 				secondMenu(ans2);
@@ -109,32 +115,62 @@ public class BankManager {
 				adminMenu();
 				break;
 			case "b":
-				depositIntoAcc();
+				try {
+					depositIntoAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					adminMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				adminMenu();
 				break;
 			case "c":
-				withdrawFromAcc();
+				try {
+					withdrawFromAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					adminMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				adminMenu();
 				break;
 			case "d":
-				transferMoneyFromAcc1ToAcc2();
+				try {
+					transferMoneyFromAcc1ToAcc2();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					adminMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				adminMenu();
 				break;
 			case "e":
-				approveAcc();
+				try {
+					approveAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					adminMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				adminMenu();
 				break;
 			case "f":
-				denyAcc();
+				try {
+					denyAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					adminMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				adminMenu();
 				break;
 			case "g":
-				closeAcc();
+				try {
+					closeAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					adminMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				adminMenu();
 				break;
@@ -153,7 +189,7 @@ public class BankManager {
 		System.out.println("To ensure you can perform this type of action, please enter your user id.");
 		int i1 = scan.nextInt();
 		scan.nextLine();
-		System.out.println("What is the id of the account you'd like to deny?");
+		System.out.println("What is the id of the account you'd like to close?");
 		int i2 = scan.nextInt();
 		scan.nextLine();
 		String stats = ao.closeAccount(i1, i2);
@@ -175,12 +211,22 @@ public class BankManager {
 				employeeMenu();
 				break;
 			case "b":
-				approveAcc();
+				try {
+					approveAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					employeeMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				employeeMenu();
 				break;
 			case "c":
-				denyAcc();
+				try {
+					denyAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					employeeMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				employeeMenu();
 				break;
@@ -243,27 +289,52 @@ public class BankManager {
 		
 		switch(custAns) {
 			case "a":
-				viewAccByUserId();
+				try {
+					viewAccByUserId();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					customerMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				customerMenu();
 				break;
 			case "b":
-				depositIntoAcc();
+				try {
+					depositIntoAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					customerMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				customerMenu();
 				break;
 			case "c":
-				withdrawFromAcc();
+				try {
+					withdrawFromAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					customerMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				customerMenu();
 				break;
 			case "d":
-				transferMoneyFromAcc1ToAcc2();
+				try {
+					transferMoneyFromAcc1ToAcc2();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					customerMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				customerMenu();
 				break;
 			case "e":
-				createNewAcc();
+				try {
+					createNewAcc();
+				} catch (InputMismatchException e) {
+					System.out.println("Caught an InputMismatchException!");
+					customerMenu();
+				}
 				System.out.println("Would you like to do anything else?");
 				customerMenu();
 				break;
@@ -288,7 +359,7 @@ public class BankManager {
 		System.out.println("What is the initial balance of the account?");
 		double d = scan.nextDouble();
 		scan.nextLine();
-		System.out.println("What is the status of the account?");
+		System.out.println("Please set the status of your new account to 'Pending' until an employee or an admin can approve your account.");
 		String stats = scan.nextLine();
 		Account a = new Account(u, type, d, stats);
 		
@@ -368,7 +439,7 @@ public class BankManager {
 		System.out.println("What is your password?");
 		String uPass = scan.nextLine();
 		
-		if (uName.equals(u.getUserName()) && uPass.equals(u.getPassWord())) {
+		if (uo.logInUser(i, uName, uPass)) {
 			System.out.println("Welcome back "+u.getFirstName()+" to Little Baller Bank!");
 		} else {
 			System.out.println("You may have typed something wrong. Please try again.");

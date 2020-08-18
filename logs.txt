@@ -59,3 +59,105 @@
 2020-08-16 12:09:33 INFO  UserOps:30 - Getting a User with id: 4
 2020-08-16 17:18:00 INFO  UserOps:30 - Getting a User with id: 4
 2020-08-16 17:19:45 INFO  AccountOps:159 - Closing account with id 5
+2020-08-17 20:41:15 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-17 20:41:18 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-17 20:41:19 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-17 20:41:19 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-17 20:41:20 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-17 20:41:20 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-17 20:41:20 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-17 20:41:20 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-17 20:41:21 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-17 20:44:02 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-17 20:44:04 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-17 20:44:05 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-17 20:44:05 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-17 20:44:06 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-17 20:44:06 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-17 20:44:06 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-17 20:44:07 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-17 20:44:07 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-17 20:46:05 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-17 20:46:08 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-17 20:46:08 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-17 20:46:08 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-17 20:52:13 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-17 20:52:15 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-17 20:52:15 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-17 20:52:16 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-17 20:52:16 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-17 20:52:17 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-17 20:52:17 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-17 20:52:17 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-17 20:52:17 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 08:18:23 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 08:18:26 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 08:18:27 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 08:18:27 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 08:18:28 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 08:18:28 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 08:18:28 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 08:18:29 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 08:18:29 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 08:32:49 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 08:32:52 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 08:32:54 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 08:32:54 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 08:32:55 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 08:32:55 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 08:32:55 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 08:32:56 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 08:32:56 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 08:39:32 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 08:39:34 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 08:39:34 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 08:39:34 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 08:39:35 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 08:39:35 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 08:39:36 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 08:39:36 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 08:39:36 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 09:41:02 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 09:41:04 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 09:41:04 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 09:41:05 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 09:41:06 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 09:41:06 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 09:41:07 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 09:41:07 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 09:41:07 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 09:47:24 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 09:47:26 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 09:47:26 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 09:47:27 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 09:47:27 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 09:47:28 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 09:47:28 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 09:47:28 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 09:47:28 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 09:48:21 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 09:48:23 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 09:48:23 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 09:48:23 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 09:48:24 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 09:48:24 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 09:48:26 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 09:48:26 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 09:48:26 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 09:51:24 INFO  AccountOps:34 - Getting Account by ID: 5
+2020-08-18 09:51:26 INFO  AccountOps:34 - Getting Account by ID: 6
+2020-08-18 09:51:27 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 6
+2020-08-18 09:51:27 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 5
+2020-08-18 09:51:27 INFO  AccountOps:114 - Transferring 1000.0 from Account with ID 5 to Account with Id 6
+2020-08-18 09:51:28 INFO  AccountOps:99 - Withdrawing 1000.0 from Account with ID 5
+2020-08-18 09:51:28 INFO  AccountOps:84 - Depositing 1000.0 from Account with ID 6
+2020-08-18 09:51:28 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=5, userId=1, accountType=Test, accountBalance=7000.0, status=Approved]
+2020-08-18 09:51:28 INFO  AccountOps:72 - Updating Account Balance of Account: Account [accountId=6, userId=1, accountType=Test, accountBalance=5000.0, status=Approved]
+2020-08-18 10:14:37 INFO  UserOps:30 - Getting a User with id: 5
+2020-08-18 10:14:38 INFO  UserOps:43 - Logging in User with id: 5
+2020-08-18 10:14:38 INFO  UserOps:46 - You have successfully logged in.
+2020-08-18 16:08:20 INFO  UserOps:30 - Getting a User with id: 4
+2020-08-18 16:08:30 INFO  UserOps:43 - Logging in User with id: 4
+2020-08-18 16:08:31 INFO  UserOps:46 - You have successfully logged in.
+2020-08-18 16:08:54 INFO  UserOps:24 - Getting all Customers
+2020-08-18 16:08:54 INFO  AccountOps:22 - Getting all Accounts

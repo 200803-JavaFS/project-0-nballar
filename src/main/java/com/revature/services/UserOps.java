@@ -38,5 +38,15 @@ public class UserOps {
 		}
 		return false;
 	}
+	
+	public boolean logInUser(int id, String uName, String pWord) {
+		log.info("Logging in User with id: "+id);
+		User u = uDao.getUserById(id);
+		if (uName.equals(u.getUserName()) && pWord.equals(u.getPassWord())) {
+			log.info("You have successfully logged in.");
+			return true;
+		}
+		return false;
+	}
 		
 }
