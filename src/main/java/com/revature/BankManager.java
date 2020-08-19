@@ -20,10 +20,10 @@ public class BankManager {
 		System.out.println("Welcome to Little Baller Bank!");
 		System.out.println("What would you like to do?\n"+"[a] Log In\n"+"[b] Create a New User\n"+"[c] Exit");
 		String ans1 = scan.nextLine();
-		firstMenu(ans1);
+		startMenu(ans1);
 	}
 
-	private void firstMenu(String ans1) {
+	private void startMenu(String ans1) {
 		ans1 = ans1.toLowerCase();
 		
 		switch(ans1) {
@@ -34,9 +34,6 @@ public class BankManager {
 					System.out.println("Caught an InputMismatchException!");
 					bankManagement();
 				}
-				System.out.println("What is your user type?\n"+"[a] Customer\n"+"[b] Employee\n"+"[c] Admin");
-				String ans2 = scan.nextLine();
-				secondMenu(ans2);
 				break;
 			case "b":
 				createNewUser();
@@ -78,26 +75,6 @@ public class BankManager {
 		} else {
 			System.out.println("Something went wrong. Please try again.");
 			bankManagement();
-		}
-	}
-
-	private void secondMenu(String ans2) {
-		ans2 = ans2.toLowerCase();
-		
-		switch(ans2) {
-			case "a":
-				customerMenu();
-				break;
-			case "b":
-				employeeMenu();
-				break;
-			case "c":
-				adminMenu();
-				break;
-			default:
-				System.out.println("You have entered an incorrect value. Please try again.");
-				bankManagement();
-				break;
 		}
 	}
 
@@ -282,6 +259,7 @@ public class BankManager {
 	}
 
 	private void customerMenu() {
+		System.out.println("");
 		System.out.println("What would you like to do?\n"+"[a] View Your Accounts\n"+"[b] Deposit\n"+"[c] Withdraw\n"+"[d] Transfer\n"
 				+"[e] Create a New Account\n"+"[f] Exit");
 		String custAns = scan.nextLine();
@@ -359,9 +337,7 @@ public class BankManager {
 		System.out.println("What is the initial balance of the account?");
 		double d = scan.nextDouble();
 		scan.nextLine();
-		System.out.println("Please set the status of your new account to 'Pending' until an employee or an admin can approve your account.");
-		String stats = scan.nextLine();
-		Account a = new Account(u, type, d, stats);
+		Account a = new Account(u, type, d, "Pending");
 		
 		if(ao.createNewAccount(a)) {
 			System.out.println("Your account has been added to our database");
@@ -384,15 +360,15 @@ public class BankManager {
 	}
 
 	private void transferMoneyFromAcc1ToAcc2() {
-		System.out.println("What is the id of the first account?");
+		System.out.println("What is the id of the account you would like to withdraw money from?");
 		int firstId = scan.nextInt();
 		scan.nextLine();
 		Account firstAcc = ao.getAccountById(firstId);
-		System.out.println("What is the id of the second account?");
+		System.out.println("What is the id of the account you would like to deposit money into?");
 		int secondId = scan.nextInt();
 		scan.nextLine();
 		Account secondAcc = ao.getAccountById(secondId);
-		System.out.println("What is the amount you are planning to transfer?");
+		System.out.println("What is the amount of money you are planning to transfer?");
 		double transAmt = scan.nextDouble();
 		scan.nextLine();
 		double[] newAccBalances = ao.transferTo(firstId, secondId, transAmt);
@@ -404,7 +380,7 @@ public class BankManager {
 	}
 
 	private void withdrawFromAcc() {
-		System.out.println("What is the ID of the account that you are trying to withdraw from?");
+		System.out.println("What is the ID of the account that you are trying to withdraw money from?");
 		int i = scan.nextInt();
 		scan.nextLine();
 		Account a = ao.getAccountById(i);
@@ -417,7 +393,7 @@ public class BankManager {
 	}
 
 	private void depositIntoAcc() {
-		System.out.println("What is the ID of the account that you are trying to deposit into?");
+		System.out.println("What is the ID of the account that you are trying to deposit money into?");
 		int i = scan.nextInt();
 		scan.nextLine();
 		Account a = ao.getAccountById(i);
@@ -441,6 +417,21 @@ public class BankManager {
 		
 		if (uo.logInUser(i, uName, uPass)) {
 			System.out.println("Welcome back "+u.getFirstName()+" to Little Baller Bank!");
+			switch(u.getUserType()) {
+				case "Customer":
+					customerMenu();
+					break;
+				case "Employee":
+					employeeMenu();
+					break;
+				case "Admin":
+					adminMenu();
+					break;
+				default:
+					System.out.println("Something went wrong");
+					bankManagement();
+					break;
+			}
 		} else {
 			System.out.println("You may have typed something wrong. Please try again.");
 			bankManagement();

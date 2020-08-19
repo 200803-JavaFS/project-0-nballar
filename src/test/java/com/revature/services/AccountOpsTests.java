@@ -3,8 +3,6 @@ package com.revature.services;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Arrays;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
